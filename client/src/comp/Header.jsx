@@ -28,7 +28,7 @@ const Header = () => {
     };
 
     return (
-        <Navbar fluid={true} rounded={false}>
+        <Navbar fluid={true} rounded={false} className='border-b-2'>
             <Navbar.Brand className="container flex flex-wrap items-center justify-between  mx-auto">
                 <Link to="/" className="flex items-center">
                     <img src={Logo} className="h-6 mx-3 sm:h-9" alt="Logo" />
@@ -70,7 +70,7 @@ const Header = () => {
                             <BsMenuUp onClick={() => setToggle(!toggle)} />
                         </IconContext.Provider>
                     </div>
-                <Link to="/sign-in" className='px-1'>
+                <Link to="/sign-up" className='px-1'>
                     {/* <Button>Sign In</Button> */}
                     <button
                             type="button"
@@ -91,13 +91,13 @@ const Header = () => {
                         </Navbar.Link>
 
                         <Navbar.Link as={'div'} active={path === "/projects"} to="/projects">
-                        <Link to="/">
+                        <Link to="/projects">
                             Projects
                             </Link>
                         </Navbar.Link>
 
                         <Navbar.Link as={'div'} active={path === "/about"}>
-                        <Link to="/">
+                        <Link to="/about">
                             About
                             </Link>
                             </Navbar.Link>
