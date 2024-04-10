@@ -26,7 +26,7 @@ export default function SignUp(){
                     </div>
                     <div>
                         <Label value="Email" />
-                        <TextInput type="text" id="email" placeholder="email@company.com" className="w-full p-2 border-gray-300 rounded-lg dark:bg-gray" />
+                        <TextInput type="email" id="email" placeholder="email@company.com" className="w-full p-2 border-gray-300 rounded-lg dark:bg-gray" />
                     </div>
                     <div>
                         <Label value="Password" />
