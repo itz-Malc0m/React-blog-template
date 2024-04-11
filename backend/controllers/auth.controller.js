@@ -3,7 +3,7 @@ import bcryptjs from "bcryptjs"
 import { errorHandler } from "../utils/error.js";
 import jwt from "jsonwebtoken";
 
-export const signup = async (req,res,next) => {
+export const signUp = async (req,res,next) => {
     const {username, email, password} = req.body;
 
     if (!username || !email || !password || username === "" || email === "" || password === ""){
@@ -29,10 +29,10 @@ export const signup = async (req,res,next) => {
 
 };
 
-export const signin = async (req, res, next) => {
-    const { username, password } = req.body;
+export const signIn = async (req, res, next) => {
+    const { email, password } = req.body;
 
-    if (!username || !password || username === "" || password === ""){
+    if (!email || !password || email === "" || password === ""){
         next(errorHandler(400, "All fields are required"));
     }
     try {
@@ -53,7 +53,7 @@ export const signin = async (req, res, next) => {
         const { password: pass, ...rest } = validUser._doc;
         
         res.status(200).cookie('access_token', token, {
-            httpOnly: true
+            httpOnly: true,
         }).json(rest);
 
     } catch(error){
